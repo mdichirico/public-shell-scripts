@@ -237,7 +237,10 @@ MYPHPINI=`sudo find /etc -name php.ini -print`
 PATTERN=';date.timezone =';
 REPLACEMENT='date.timezone = UTC'
 sudo sed -i "s/$PATTERN/$REPLACEMENT/" "$MYPHPINI"
-
+# Also, turn on error logging and outputting errors to browser, which is meant for development environments:
+sudo sed -i "s/;error_log = php_errors.log/error_log = php_errors.log/" "$MYPHPINI"
+sudo sed -i "s/;display_errors = On/display_errors = On/" "$MYPHPINI"
+sudo sed -i "s/;log_errors = On/log_errors = On/" "$MYPHPINI"
 
 # Restart Apache
 if [ "$isCentOs7" == true ]
