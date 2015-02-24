@@ -136,6 +136,15 @@ sudo yum install -y gcc
 # how to check if your bash is vulnerable: http://security.stackexchange.com/questions/68168/is-there-a-short-command-to-test-if-my-server-is-secure-against-the-shellshock-b
 sudo yum update -y bash
 
+# Install and set-up NTP daemon:
+if [ "$isCentOs7" == true ]; then
+    sudo yum install ntp
+    sudo firewall-cmd --add-service=ntp --permanent
+    sudo firewall-cmd --reload
+
+    sudo systemctl start ntpd
+fi
+
 # Let's install our LAMP stack by starting with Apache:
 sudo yum install -y httpd
 if [ "$isCentOs7" == true ]
