@@ -138,7 +138,7 @@ sudo yum update -y bash
 
 # Install and set-up NTP daemon:
 if [ "$isCentOs7" == true ]; then
-    sudo yum install ntp
+    sudo yum install -y ntp
     sudo firewall-cmd --add-service=ntp --permanent
     sudo firewall-cmd --reload
 
