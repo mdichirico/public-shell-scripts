@@ -133,6 +133,32 @@ sudo service elasticsearch start
 sudo systemctl daemon-reload
 sudo systemctl enable elasticsearch.service
 
+# Let's open port 9200 to we can communicate with ElasticSearch:
+sudo firewall-cmd --zone=public --add-port=9200/tcp --permanent
+sudo firewall-cmd --reload
+
 echo ""
 echo "Success! Elasticsearch is installed and currently running."
+echo ""
+echo "You can quickly verify your ElasticSearch installation by visiting the following:"
+echo ""
+echo "http://<server-address>:9200"
+echo ""
+echo "Replace <server-address> either with your server's domain name or IP address"
+echo ""
+echo "You should content similar to the following:"
+echo ""
+echo "{"
+echo "  'status': 200,"
+echo "  'name': 'Tito Bohusk',"
+echo "  'cluster_name': 'elasticsearch',"
+echo "  'version': {"
+echo "     'number': '1.4.4',"
+echo "     'build_hash': 'c88f77ffc81301dfa9dfd81ca2232f09588bd512',"
+echo "     'build_timestamp': '2015-02-19T13:05:36Z',"
+echo "     'build_snapshot': false,"
+echo "     'lucene_version': '4.10.3'"
+echo "  },"
+echo "  'tagline': 'You Know, for Search'"
+echo "}"
 echo ""
