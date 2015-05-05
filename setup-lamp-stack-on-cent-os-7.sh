@@ -134,6 +134,9 @@ sudo yum install -y gcc
 # Let's make sure that bzip2 is installed:
 sudo yum install -y bzip2
 
+#Let's make sure that libpng and libpng-devel are installed:
+sudo yum install -y libpng libpng-devel
+
 # Let's make sure we have the latest version of bash installed, which
 # are patched to protect againt the shellshock bug. Here is an article explaning
 # how to check if your bash is vulnerable: http://security.stackexchange.com/questions/68168/is-there-a-short-command-to-test-if-my-server-is-secure-against-the-shellshock-b

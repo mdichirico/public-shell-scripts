@@ -31,6 +31,9 @@ sudo yum erase -y nodejs
 # Let's make sure that bzip2 is installed because it is needed for PhantomJS installation:
 sudo yum install -y bzip2
 
+#Let's make sure that libpng and libpng-devel are installed:
+sudo yum install -y libpng libpng-devel
+
 # Let's setup the 'client' portion. It requires Node.js and related tools, so let's make sure they are installed.
 # We will be using the Node.js build described here: https://github.com/joyent/node/wiki/installing-node.js-via-package-manager#enterprise-linux-and-fedora
 wget http://nodejs.org/dist/v0.12.0/node-v0.12.0-linux-x64.tar.gz
