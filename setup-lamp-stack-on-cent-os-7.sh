@@ -129,7 +129,7 @@ sudo yum install -y openssl
 sudo yum install -y curl
 
 # Let's make sure we have a C/C++ compiler installed:
-sudo yum install -y gcc
+sudo yum install -y gcc gcc-c++
 
 # Let's make sure that bzip2 is installed:
 sudo yum install -y bzip2

@@ -34,6 +34,9 @@ sudo yum install -y bzip2
 #Let's make sure that libpng and libpng-devel are installed:
 sudo yum install -y libpng libpng-devel
 
+# Let's make sure we have a C/C++ compiler installed:
+sudo yum install -y gcc gcc-c++
+
 # Let's setup the 'client' portion. It requires Node.js and related tools, so let's make sure they are installed.
 # We will be using the Node.js build described here: https://github.com/joyent/node/wiki/installing-node.js-via-package-manager#enterprise-linux-and-fedora
 wget http://nodejs.org/dist/v0.12.0/node-v0.12.0-linux-x64.tar.gz
@@ -82,12 +85,21 @@ sudo npm install -g grunt
 # Install yeoman:
 sudo npm install -g yo
 
+sudo npm install -g node-sass
+
 # Got into the /client directory and install components listed in bower.json
 cd "$CWD/../client"
 bower install
 grunt
 
+# When using 'grunt serve', LiveReload needs port 35729 to be open. Let's be sure it is open:
+sudo firewall-cmd --zone=public --add-port=35729/tcp --permanent
+sudo firewall-cmd --reload
+# IMPORTANT: If you are using Google Chrome to visit the Yeoman scaffolded page, you need to be sure that you have the LiveReload plugin installed in your Chrome browser.
 
+# When using 'grunt server', port 9000 needs to be open if we plan to allow non-localhost browsers to visit the page/site:
+sudo firewall-cmd --zone=public --add-port=9000/tcp --permanent
+sudo firewall-cmd --reload
 
 echo ""
 echo "Finished installing Node.js, npm, and bower"
