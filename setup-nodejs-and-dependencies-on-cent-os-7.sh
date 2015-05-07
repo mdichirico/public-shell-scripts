@@ -101,6 +101,10 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --zone=public --add-port=9000/tcp --permanent
 sudo firewall-cmd --reload
 
+# The following is needed for PhantomJS to work properly on CentOS:
+sudo yum install freetype
+sudo yum install fontconfig
+
 echo ""
 echo "Finished installing Node.js, npm, and bower"
 echo ""
