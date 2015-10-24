@@ -129,13 +129,7 @@ sudo yum install -y openssl
 sudo yum install -y curl
 
 # Let's make sure we have a C/C++ compiler installed:
-sudo yum install -y gcc gcc-c++
-
-# Let's make sure that bzip2 is installed:
-sudo yum install -y bzip2
-
-#Let's make sure that libpng and libpng-devel are installed:
-sudo yum install -y libpng libpng-devel
+sudo yum install -y gcc
 
 # Let's make sure we have the latest version of bash installed, which
 # are patched to protect againt the shellshock bug. Here is an article explaning
@@ -245,7 +239,7 @@ fi
 
 
 # Install PHP 5.6
-sudo yum install -y php56u php56u-mysql php56u-bcmath php56u-cli php56u-common php56u-ctype php56u-devel php56u-embedded php56u-enchant php56u-fpm php56u-gd php56u-hash php56u-intl php56u-json php56u-ldap php56u-mbstring php56u-mysql php56u-odbc php56u-pdo php56u-pear.noarch ph56u-pecl-jsonc php56u-pecl-memcache php56u-pgsql php56u-phar php56u-process php56u-pspell php56u-openssl php56u-recode php56u-snmp php56u-soap php56u-xml php56u-xmlrpc php56u-zlib php56u-zip
+sudo yum install -y php56u php56u-mysql php56u-bcmath php56u-cli php56u-common php56u-ctype php56u-devel php56u-embedded php56u-enchant php56u-fpm php56u-gd php56u-hash php56u-intl php56u-json php56u-ldap php56u-mbstring php56u-mysql php56u-odbc php56u-pdo php56u-pear.noarch php56u-pecl-jsonc php56u-pecl-memcache php56u-pgsql php56u-phar php56u-process php56u-pspell php56u-openssl php56u-recode php56u-snmp php56u-soap php56u-xml php56u-xmlrpc php56u-zlib php56u-zip
 
 # Edit the php.ini configuration file and set the default timezone to UTC:
 MYPHPINI=`sudo find /etc -name php.ini -print`
