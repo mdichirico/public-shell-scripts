@@ -136,6 +136,10 @@ sudo yum install -y gcc
 # how to check if your bash is vulnerable: http://security.stackexchange.com/questions/68168/is-there-a-short-command-to-test-if-my-server-is-secure-against-the-shellshock-b
 sudo yum update -y bash
 
+# Let's make sure that firewalld is installed:
+sudo yum install -y firewalld
+sudo systemctl start firewalld
+
 # Install and set-up NTP daemon:
 if [ "$isCentOs7" == true ]; then
     sudo yum install -y ntp
