@@ -146,7 +146,7 @@ if [ "$isCentOs7" == true ]; then
 fi
 
 # Let's install our LAMP stack by starting with Apache:
-sudo yum install -y httpd
+sudo yum install -y httpd mod_ssl openssh
 if [ "$isCentOs7" == true ]
 then
     sudo systemctl start httpd
