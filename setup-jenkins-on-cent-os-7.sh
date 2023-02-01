@@ -11,9 +11,9 @@
 # INSTRUCTIONS FOR USE:
 # 1. Copy this shell script to your home directory or the /tmp directory.
 # 2. Make it executable with the following command: 
-#      chmod a+x setup-jenkins-on-cent-os-7.sh
+  #   chmod a+x setup-jenkins-on-cent-os-7.sh
 # 3. Execute the script as a sudo user:
-#      sudo ./setup-jenkins-on-cent-os-7.sh
+   # sudo ./setup-jenkins-on-cent-os-7.sh
 #
 # It's important to point out that this script assumes that none of the binaries 
 # that are to be installed are already present on the target server. If you already
